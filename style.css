@@ -1,0 +1,457 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background-color: #f5f0e6; /* màu be nhạt */
+  color: #4b3b2b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: #8b6d3c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  background: #fff7e6;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(139, 109, 60, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Header */
+header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  font-size: 2.8rem;
+  color: #a97c50;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: textGlow 3s ease infinite alternate;
+}
+header p {
+  font-style: italic;
+  color: #6e5537;
+}
+
+/* Sidebar (Info + hình ảnh + sở thích) */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Thông tin */
+.info {
+  background: #fff3d1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px #d9c29d;
+  animation: slideInLeft 1s ease forwards;
+}
+.info h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d9c29d;
+  padding-bottom: 5px;
+  color: #a97c50;
+}
+.info p {
+  margin: 8px 0;
+  font-weight: 600;
+}
+.social-links a {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #cba84a;
+}
+
+/* Hình ảnh */
+.photos {
+  background: #fff3d1;
+  padding: 20px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  box-shadow: inset 0 0 15px #d9c29d;
+  animation: slideInLeft 1.2s ease forwards;
+}
+.photos img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(139, 109, 60, 0.3);
+}
+.photos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(139, 109, 60, 0.5);
+}
+
+/* Sở thích */
+.hobbies {
+  background: #fff3d1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px #d9c29d;
+  animation: slideInLeft 1.4s ease forwards;
+}
+.hobbies h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d9c29d;
+  padding-bottom: 5px;
+  color: #a97c50;
+}
+.hobbies ul {
+  list-style: none;
+}
+.hobbies ul li {
+  margin: 8px 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+.hobbies ul li i {
+  color: #cba84a;
+}
+
+/* Main content (Chuyên môn + Dự án + Download) */
+.main-content {
+  background: #fff3d1;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 15px #d9c29d;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Kỹ năng */
+.skills {
+  animation: fadeIn 1.2s ease forwards;
+}
+.skills h2 {
+  margin-bottom: 15px;
+  color: #a97c50;
+  border-bottom: 2px solid #d9c29d;
+  padding-bottom: 5px;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.skill-item {
+  background: #e8d7a9;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #5a422a;
+  box-shadow: 0 4px 8px rgba(139, 109, 60, 0.3);
+  transition: background 0.3s ease;
+  cursor: default;
+}
+.skill-item:hover {
+  background: #cba84a;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(139, 109, 60, 0.6);
+}
+
+/* Dự án */
+.projects {
+  animation: fadeIn 1.4s ease forwards;
+}
+.projects h2 {
+  margin-bottom: 15px;
+  color: #a97c50;
+  border-bottom: 2px solid #d9c29d;
+  padding-bottom: 5px;
+}
+.project-list {
+  display: grid;
+  gap: 15px;
+}
+.project-item {
+  background: #fff7d3;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(139, 109, 60, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(139, 109, 60, 0.4);
+}
+.project-item h3 {
+  margin-bottom: 8px;
+  color: #8b6d3c;
+}
+.project-item p {
+  font-size: 0.9rem;
+  color: #6e5537;
+}
+.project-item a {
+  font-weight: 600;
+  color: #cba84a;
+}
+
+/* Nút download */
+.download-cv {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+.download-cv button {
+  background-color: #cba84a;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(139, 109, 60, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+.download-cv button:hover {
+  background-color: #a67c2d;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #a97c50;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-top: auto;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  .main-content {
+    padding: 15px 20px;
+  }
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .photos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .skill-item {
+    flex: 1 1 45%;
+  }
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px #d9c29d, 0 0 15px #d9c29d, 0 0 20px #d9c29d;
+  }
+  100% {
+    text-shadow: 0 0 20px #cba84a, 0 0 30px #cba84a, 0 0 40px #cba84a;
+  }
+}
+/* Kinh nghiệm */
+.experience h2,
+.education h2,
+.my-works h2 {
+  margin-bottom: 15px;
+  color: #a97c50;
+  border-bottom: 2px solid #d9c29d;
+  padding-bottom: 5px;
+}
+.experience-list, .education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.exp-item, .edu-item {
+  background: #fff7d3;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(139, 109, 60, 0.15);
+}
+
+/* Tác phẩm cá nhân */
+.my-works {
+  margin-top: 30px;
+}
+.works-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+.work-item {
+  background: #fff7d3;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(139, 109, 60, 0.15);
+}
+.work-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.work-item img:hover {
+  transform: scale(1.05);
+}
+.work-item p {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #5a422a;
+}
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 15px; /* Thêm khoảng cách trên */
+  animation: avatarFloat 3s ease-in-out infinite;
+}
+
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #cba84a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+/* Animation avatar nổi lên xuống */
+@keyframes avatarFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: #8b6d3c;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  color: #cba84a;
+  transform: scale(1.1);
+}
+.hobby-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.hobby-images img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(139, 109, 60, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hobby-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(139, 109, 60, 0.4);
+}
